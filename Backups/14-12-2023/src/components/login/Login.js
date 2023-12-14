@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -14,7 +15,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { MESSAGE_TYPE, MessageBox } from "./../message/MessageBox";
 import { EncryptString, DecryptString } from "../../utils/Common";
 import Copyright from "../copyright/Copyright";
-import { NavLink } from "react-router-dom";
 // import AppContext from "../../context/AppContext";
 
 const defaultTheme = createTheme();
@@ -55,7 +55,7 @@ const Login = () => {
         messageType: MESSAGE_TYPE.SUCCESSFUL
       });
       localStorage.setItem("Payroll-Status", "Y");
-      window.location.href = "/home/dashboard";
+      window.location.href = "/home";
     }
   };
 
@@ -176,14 +176,14 @@ const Login = () => {
               </Button>
               <Grid container>
                 <Grid item xs style={{ textAlign: "left" }}>
-                  <NavLink to="/forgot-password" variant="body2">
+                  <Link href="/forgot-password" variant="body2">
                     Forgot password?
-                  </NavLink>
+                  </Link>
                 </Grid>
                 <Grid item style={{ textAlign: "right" }}>
-                  <NavLink to="/register-me" variant="body2">
+                  <Link href="/register-me" variant="body2">
                     {"Don't have an account? Sign Up"}
-                  </NavLink>
+                  </Link>
                 </Grid>
               </Grid>
             </Box>
